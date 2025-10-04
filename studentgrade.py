@@ -1,16 +1,25 @@
-# Program to accept marks and evaluate grade
+marks = []   
 
-marks = int(input("Enter your marks (0-100): "))
+for i in range(1, 6):
+    m = int(input(f"Enter marks for subject {i}: "))
+    marks.append(m)
 
-if marks >= 90:
+total = sum(marks)
+average = total / 5
+
+if average >= 90:
     grade = "A"
-elif marks >= 75:
+elif average >= 75:
     grade = "B"
-elif marks >= 60:
+elif average >= 60:
     grade = "C"
-elif marks >= 40:
+elif average >= 40:
     grade = "D"
 else:
     grade = "Fail"
 
-print(f"Your grade is: {grade}")
+print("\n--- Result ---")
+print("Marks:", marks)
+print("Total:", total)
+print("Average:", average)
+print("Grade:", grade)
